@@ -1,0 +1,16 @@
+---
+version: '3'
+services:
+  mydb:
+    image: mysql:5
+    environment:
+      MYSQL_ROOT_PASSWORD: intelliqit  # Note the colon separating the key and value
+
+  wordpress:
+    image: wordpress
+    ports:
+     - "8080:80"  # Ports mapping should be specified with quotes around the host and container ports
+    deploy:
+       replicas: 3
+
+...         
